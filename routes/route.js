@@ -1,18 +1,16 @@
-var renders = require('/controller/controller.js');
+var controller = require('../controllers/controller.js');
 
 module.exports.routes = function(app) {
-    
-    app.get('/scrape', function(req, res) {
-         
-    });
-    
-    app.post('/addNote/:id' , function(req, res) {
-         
-    });
-    
-    app.get('/delete/:id', function(req, res) {
-        
-    });
-    
-    
+
+  app.get('/', controller.home);
+
+  app.get('/scrape', controller.scrapeData);
+
+  app.post('/getNotes', controller.getNotes);
+
+  app.post('/addNote', controller.addNote);
+
+  app.post('/delete', controller.deleteNote);
+
+
 }

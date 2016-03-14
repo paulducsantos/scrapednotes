@@ -4,13 +4,28 @@ var express = require('express');
 var expressHandlebars = require('express-handlebars');
 var mongoose = require('mongoose');
 var request = require('request');
+var logger = require('morgan');
 
-var routes = require('./routes/routes.js')
 
-const PORT = precess.env.PORT || 8080
+//Database configuration
+mongoose.connect('mongodb://localhost/scraperNotes');
+var db = mongoose.connection;
+
+db.on('error', function(err) {
+  console.log('Mongoose Error: ', err);
+});
+db.once('open', function() {
+  console.log('Mongoose connection successful.');
+});
+
+
+var routes = require('./routes/route.js')
+
+const PORT = process.env.PORT || 8080
 
 var app = express();
 
+app.use(logger('dev'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static('public'));
 app.engine('handlebars', expressHandlebars({defaultLayout: 'main'}));
