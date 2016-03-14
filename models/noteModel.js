@@ -17,6 +17,7 @@ var deleteNote = function(id) {
   }).remove();
 }
 
+//this isnt working for some reason
 Note.post('remove', function(next){
   debugger;
   this.model('ScrapedData').update(

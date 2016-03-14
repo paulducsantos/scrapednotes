@@ -70,6 +70,7 @@ var getAllNotes = function(scrapeId) {
     });
 }
 
+//trying to use the middle ware for mongoose so i commented this out
 // var deleteNote = function(scrapeId, noteId) {
 //   ScrapedData
 //     .update(
