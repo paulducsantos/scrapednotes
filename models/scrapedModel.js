@@ -82,6 +82,7 @@ var getAllNotes = function(scrapeId) {
 // }
 
 var ScrapedData = mongoose.model('ScrapedData', ScrapedDataSchema);
+exports.ScrapedDataSchema = ScrapedDataSchema;
 exports.ScrapedData = ScrapedData;
 exports.scraper = scraper;
 exports.getScrapedData = getScrapedData;
