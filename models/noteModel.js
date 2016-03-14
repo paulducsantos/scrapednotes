@@ -18,14 +18,14 @@ var deleteNote = function(id) {
 }
 
 //this isnt working for some reason
-Note.post('remove', function(next){
-  debugger;
-  this.model('ScrapedData').update(
-      {_id: this._id}, 
-      {$pull: {notes: this._id}},
-      next
-  );
-});
+// Note.post('remove', function(next){
+//   debugger;
+//   this.model('ScrapedData').update(
+//       {_id: this._id}, 
+//       {$pull: {notes: this._id}},
+//       next
+//   );
+// });
 
 var Note = mongoose.model('Note', NoteSchema);
 exports.Note = Note;
