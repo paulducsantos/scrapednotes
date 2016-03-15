@@ -30,10 +30,9 @@ var deleteNote = function(id) {
 //   );
 // });
 
-NoteSchema.post('remove', function(next) {
-  debugger;
-  ScrapedData.remove({ 'notes': this._id }).exec();
-  next();
+NoteSchema.post('remove', function() {
+  ScrapedData.ScrapedData.remove({ 'notes': this._id }).exec();
+
 });
 
 
